@@ -90,6 +90,87 @@ purpose, so they **collide**. The collisions are the point:
 
 ---
 
+## PART 3 — The 0-loss law: the formal spine under both parts (Prism/Comb, 2026-07-01)
+
+Part 1 and Part 2 are the **same mathematical object run in opposite directions**, and that object is a
+**bijection**. Entropy is invariant under bijection (`H(f(X)) = H(X)`), so the fabric re-relates
+information with **0 loss** while never claiming compression below entropy — Shannon's bound
+`E[bits] ≥ H(X)` always stands.
+
+### Part 1 formalized — the comb IS the CRT ring isomorphism *(math principle)*
+
+The prime-lane separation of §2 is not an analogy; it is the Chinese Remainder Theorem as a **ring
+isomorphism**. For pairwise-coprime moduli `m₁ … m_k` with `M = Πᵢ mᵢ`:
+
+```
+ℤ_M  ≅  ℤ_{m₁} × ℤ_{m₂} × … × ℤ_{m_k}
+```
+
+**Separate** (the comb, forward): `x ↦ (x mod m₁, …, x mod m_k)` — each op gets its private coprime
+lane; residues in distinct lanes cannot alias (§2's collision-freedom, restated as algebra).
+
+**Recombine** (exact, zero residue loss): with `Mᵢ = M / mᵢ`,
+
+```
+x = Σᵢ  rᵢ · Mᵢ · (Mᵢ⁻¹ mod mᵢ)    (mod M)
+```
+
+Because `≅` is an isomorphism, separation loses nothing: the residue vector `(r₁, …, r_k)` *is* `x`
+under a change of coordinates. The `D# = prime(n)³` ladder (60-D, MEASURED tuple_dim=60) therefore
+gives lanes that are mutually collision-proof AND losslessly reassemblable — one construction, run
+forwards for isolation, backwards for reconstruction.
+
+**The groupoid statement** *(CANON frame)*: the level ladder `L₁ … L₄₃₊` with translators `T_ij`
+satisfies `T_ji ∘ T_ij = id` and `T_jk ∘ T_ij = T_ik` — translation is **omnidirectional and
+path-independent**, so no route through the levels can silently lose bits. Scope discipline: exactly
+**one rung is MEASURED** — the 256↔1024 transcode (Q-PRISM commit `53023b6`: `lcm(8,10) = 40` bits ⇒
+**5 bytes ⇄ 4 symbols**, round-trip `transcode₁₀₂₄→₂₅₆ ∘ transcode₂₅₆→₁₀₂₄ = id`, sha256-identical,
+Rust==Python symbol-identical, code rate exactly 1.0). The full 43+ ladder is **CANON frame**; every
+other rung stays **UNVERIFIED** until it earns its own round-trip proof.
+
+### Part 2 formalized — the prism IS unitary analysis/synthesis *(math principle)*
+
+Firing cascade waves into a shared region and reading the pile-up is Fourier analysis/synthesis. The
+analysis operator `F` is **unitary**:
+
+```
+F⁻¹ F = I         (perfect reconstruction)
+‖Fx‖² = ‖x‖²      (Parseval — total energy preserved through separation)
+```
+
+An interference **peak is constructive recombination**: the search region superposes many wave
+contributions, and a coordinate where phases align accumulates amplitude — that is the synthesis
+direction (`F⁻¹`) of the same unitary map whose analysis direction sprayed the query into waves. The
+PRISM many→1 reduction (`planPrismRoute`, MEASURED) is this peak read out: the "1" is exactly where
+the "many" recombine constructively. Loss enters **only** via discard or rounding — the unitary map
+itself destroys nothing (Parseval) — which is why noise (few hits) can be dropped while the signal
+(the peak) is the exactly-recombined answer, not an approximation of it.
+
+The physical model is the frequency comb: `fₙ = n·f_rep + f_ceo` is integer-linear (exact), bridging
+optical↔microwave scales bijectively — precisely as the fabric's alphabets `2^q` are bridged by exact
+bit-count conservation at lcm boundaries (the 1,024 symbol values are the teeth).
+
+### The one-line law
+
+> **Comb and prism are the two directions of ONE bijection: forward = separate without collision
+> (CRT isomorphism — isolation), backward = recombine without loss (unitary synthesis — the
+> interference peak IS the constructive recombination). Entropy is invariant both ways: 0 loss, and
+> no claim below Shannon.**
+
+The boundary that keeps every claim true: the prism relates information perfectly; it does not create
+or destroy it. No bijection beats Shannon; the comb adds no energy; CRT adds no residue capacity.
+Collisions in the execution lanes and losses in the translation chain are impossible to express for
+the **same reason** — either would require the map to not be a bijection.
+
+Cross-links: Q-PRISM proof commits `53023b6` / `79e8d63` / `de00aca` (the MEASURED rung) ·
+`what-is-asolaria---how-do-we-get-reductions-in-everything` (the reductions boundary — referential
+cubes = infinite ADDRESSING capacity, not lossless infinite compression) ·
+`N-Nest-Prime-INFINITE-SELF-REFLECT-AGENTS-NESTED` (the integrity dual: verification = recomputation =
+applying the inverse map, so every level catches confabulation) · the Metatagging repo (Brown &
+Fedotov digital-physics grounding). E=0 — describe-only; nothing fired.
+
+---
+
 ### Grounding / tags
 - brown-hilbert PID `sha16(seed)` "200ns-class spawn id" — **MEASURED** (`drive-wave-cascade-pipeline-60D-2026-06-03.cjs:30`)
 - rename-before-load = "defeat same-name throttle = FREE" — **MEASURED** (`asolaria-loop.mjs`, `project-room-router.mjs`)
@@ -100,6 +181,9 @@ purpose, so they **collide**. The collisions are the point:
 - space-filling-curve non-self-intersection · CRT coprimality · ternary partition · birthday bound —
   **math principle** (our own math, not a runtime claim)
 - cascade-wave interference-as-compute — **CANON** (the search-lane regime)
+- 256↔1024 transcode round-trip `= id` (5 bytes ⇄ 4 symbols at `lcm(8,10)=40` bits) — **MEASURED** (Q-PRISM `53023b6`)
+- comb = CRT ring isomorphism · prism = unitary `F⁻¹F = I` / Parseval · groupoid `T_ji∘T_ij = id` —
+  **math principle**; 43+ level ladder — **CANON frame**; unproven rungs — **UNVERIFIED**
 
 Companions: `omni-dispatcher` (the router) · `Asolaria-the-full-works-200-nanoseconds-agent-emitter-plus-`
 (the emitter) · `Algorithms-of-Asolaria` · `what-is-asolaria---how-do-we-get-reductions-in-everything`.

@@ -50,6 +50,17 @@ tables below to see where you are; follow the links to walk the rest.
 | `-6-cyl-generator` | satellite generator |
 | `asolaria-whiteroom-engine` · `35-TB-google-AI-Ultra-migration` | (= LEG-1 + LEG-4, listed under External legs) |
 
+## Prism/Comb 0-loss (2026-07-01) — satellite entry
+- **The law:** every prism/comb operation is a **bijection**; entropy is invariant under bijection
+  (`H(f(X)) = H(X)`) ⇒ 0-loss re-relation, never compression below Shannon. **Forward = comb**
+  (collision-avoidance / CRT separation into coprime lanes) · **backward = prism** (collision-causation /
+  unitary recombination, interference peak = constructive recombination) — two directions of ONE bijection.
+- **MEASURED rung (the only one):** 256↔1024 transcode — Q-PRISM commit `53023b6` (`lcm(8,10)=40` bits,
+  5 bytes ⇄ 4 symbols, round-trip `= id`, sha256-identical, Rust==Python). The 43+ level ladder with
+  translators `T_ji∘T_ij = id` is **CANON frame**; every other rung is **UNVERIFIED** until its own round-trip proof.
+- **In this repo:** README PART 3 grounds Part 1 (comb = CRT ring isomorphism + explicit recombination
+  `x = Σᵢ rᵢ·Mᵢ·(Mᵢ⁻¹ mod mᵢ) mod M`) and Part 2 (prism = unitary `F⁻¹F = I` / Parseval). E=0, docs-only.
+
 ## Current state & evolution (2026-06-28) — read this, don't flatten it
 Asolaria is a **2.5-month archaeology**, not a flat stack. **Capability lineage:** auto-approval switch →
 dashboard → multi-agent → local+web MCP + code-wiki → index language (pixels-first) → cubes-as-catalogs
